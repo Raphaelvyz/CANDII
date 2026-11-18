@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyek Candi Untukmu</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #17152c, #302448, #583c54);
+    font-family: 'Trebuchet MS', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 50px #0005;
+}
+
+h1 {
+    font-size: 25px;
+    color: #ffd58a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.candi-area {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    margin: 15px 0;
+}
+
+.candi {
+    position: relative;
+    width: 210px;
+    height: 175px;
+    transition: .5s;
+}
+
+.roof {
+    position: absolute;
+    left: 55px;
+    top: 0;
+    width: 100px;
+    height: 65px;
+    background: #d69b5b;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    border-bottom: 5px solid #9c6239;
+}
+
+.roof::after {
+    content: "◆";
+    position: absolute;
+    top: 12px;
+    left: 43px;
+    color: #ffe1a5;
+}
+
+.level {
+    position: absolute;
+    background: #b87946;
+    border: 3px solid #774a35;
+    height: 38px;
+    border-radius: 5px;
+    box-shadow: inset 0 -5px #995f3d;
+}
+
+.level.one {
+    width: 110px;
+    left: 50px;
+    top: 55px;
+}
+
+.level.two {
+    width: 150px;
+    left: 30px;
+    top: 90px;
+}
+
+.level.three {
+    width: 190px;
+    left: 10px;
+    top: 125px;
+}
+
+.door {
+    position: absolute;
+    width: 35px;
+    height: 48px;
+    bottom: 0;
+    left: 87px;
+    background: #352435;
+    border-radius: 20px 20px 0 0;
+    border: 4px solid #dca36a;
+}
+
+.progress-box {
+    background: #ffffff20;
+    border-radius: 20px;
+    height: 12px;
+    overflow: hidden;
+    margin: 15px 0 8px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#ffb45c,#ffe5a5);
+    transition: width .3s;
+}
+
+#percent {
+    color: #ffd58a;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 30px;
+    background: #ffc477;
+    color: #402a28;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+    transition: .2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ffe0a8;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+#status {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #f8dcae;
+    min-height: 35px;
+}
+
+.final {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 18px;
+    background: #fff1d9;
+    color: #573c36;
+    animation: muncul .8s;
+}
+
+.final h2 {
+    color: #9a5837;
+    margin-bottom: 12px;
+}
+
+.final p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.final input {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px solid #d4a47a;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+.final button {
+    background: #8b5945;
+    color: white;
+}
+
+.footer {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+@keyframes muncul {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏛️ PROYEK PEMBANGUNAN CANDI</h1>
+
+    <p class="subtitle">
+        Sebuah proyek monumental demi memenuhi satu permintaan
+        yang ternyata tidak sesederhana kelihatannya.
+    </p>
+
+    <div class="candi-area">
+        <div class="candi">
+            <div class="roof"></div>
+            <div class="level one"></div>
+            <div class="level two"></div>
+            <div class="level three"></div>
+            <div class="door"></div>
+        </div>
+    </div>
+
+    <p style="font-size:13px;color:#ffd58a;">
+        Candi khusus untuk Sang Pemilik Sosmed
+    </p>
+
+    <div class="progress-box">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div id="percent">0% Selesai</div>
+
+    <p id="status">
+        Menunggu persetujuan dari kerajaan...
+    </p>
+
+    <button id="buildBtn" onclick="mulai()">
+        🔨 Mulai Pembangunan
+    </button>
+
+    <div class="final" id="final">
+        <h2>🎉 CANDI BERHASIL DIBANGUN!</h2>
+
+        <p>
+            Setelah melewati berbagai rintangan,
+            mengorbankan waktu, tenaga, dan kuota internet...
+            <br><br>
+            Akhirnya candi ini berhasil berdiri.
+            <br><br>
+            Namun, ada satu hal yang belum terselesaikan:
+            <b>hamba belum mendapatkan sosmed sang putri.</b>
+            <br><br>
+            Apakah sang putri berkenan memberikan
+            Instagram-nya kepada sang arsitek?
+        </p>
+
+        <input type="text" id="username"
+        placeholder="Tulis username Instagram di sini...">
+
+        <button onclick="kirim()">
+            👑 Serahkan Sosmed
+        </button>
+
+        <p id="response" style="margin-top:12px;"></p>
+    </div>
+
+    <div class="footer">
+        Dibangun oleh IRGI yang capek pulang lembur.
+        <br>
+        © GULINGKAN REZIM 
+    </div>
+
+</div>
+
+<script>
+let persen = 0;
+
+const statusText = [
+    "Mencari batu terbaik dari seluruh penjuru kerajaan...",
+    "Memanggil 1.000 pekerja candi...",
+    "Menyusun batu satu per satu...",
+    "Arsitek mulai kelelahan, tetapi tetap berjuang...",
+    "Memasang ornamen khusus untuk sang putri...",
+    "Mengecek kekuatan bangunan...",
+    "Hampir selesai! Jangan sampai ditolak kerajaan..."
+];
+
+function mulai() {
+    const btn = document.getElementById("buildBtn");
+    const progress = document.getElementById("progress");
+    const percent = document.getElementById("percent");
+    const status = document.getElementById("status");
+
+    btn.disabled = true;
+    btn.innerText = "🔨 Sedang Membangun...";
+
+    let index = 0;
+
+    let timer = setInterval(() => {
+        persen += 10;
+
+        progress.style.width = persen + "%";
+        percent.innerText = persen + "% Selesai";
+
+        if (persen < 100) {
+            status.innerText = statusText[index % statusText.length];
+            index++;
+        } else {
+            clearInterval(timer);
+
+            status.innerText = "Candi berhasil diselesaikan! 🎊";
+
+            btn.style.display = "none";
+
+            document.getElementById("final").style.display = "block";
+        }
+
+    }, 450);
+}
+
+function kirim() {
+    const username = document.getElementById("username").value.trim();
+    const response = document.getElementById("response");
+
+    if (username === "") {
+        response.innerText = "Username-nya belum diisi, Putri.";
+        return;
+    }
+
+    response.innerHTML =
+    "👑 Persembahan diterima!<br>" +
+    "Sosmed sang putri: <b>" + username.replace(/[&<>"]/g, "") +
+    "</b><br><br>" +  "Screenshot lalu kirim ke Arsitek" + "<br><br>" +
+    "Akhirnya perjuangan sang arsitek tidak sia-sia.";
+}
+</script>
+
+</body>
+</html>
